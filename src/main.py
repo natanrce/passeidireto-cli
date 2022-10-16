@@ -1,3 +1,6 @@
+from core.services.passeidireto import PasseiDiretoService
+
+
 def get_args():
   """Get arguments from command line
   """
@@ -8,8 +11,8 @@ def get_args():
     usage='python3 main.py [-h HELP] [-u URL] [-o OUTPUT]'
   )
   
-  parser.add_argument('-u', '--url', help='URL of the file to download', required=True)
-  parser.add_argument('-o', '--output', help='Filename to save data (.pdf)', required=True)
+  parser.add_argument('-u', '--url', help='Material url to download', required=True)
+  parser.add_argument('-o', '--output', help='Output filename', required=True)
   
   return parser.parse_args()
 
@@ -21,6 +24,7 @@ if __name__  == '__main__':
   
   app = App(
     get_args(),
-    PdfService()
+    PdfService(),
+    PasseiDiretoService()
   )
   app.run()

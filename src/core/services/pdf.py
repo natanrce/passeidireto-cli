@@ -32,15 +32,15 @@ class PdfService:
 
     pdf_file = pdfkit.from_file('temp.html', b'', options) # Obs: pdfkit.from_string not working properly with CSS
     
-    """Remove temp file
+    """Remove temp file from system
     """
-    import os
-    os.remove('temp.html')
+    from os import remove
+    remove('temp.html')
     
     return BytesIO(pdf_file)
   
   def get_all_pages_buffer(self, html_pages):
-    """Get all PDF pages in array
+    """Get all pdf pages in array
     """
-    return [x for x in map(self.get_single_file_buffer, html_pages)]
+    return list(map(self.get_single_file_buffer, html_pages))
   
