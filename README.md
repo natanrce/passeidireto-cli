@@ -20,7 +20,7 @@ These instructions will give you a copy of the project up and running on your lo
 
 * Clone the repo
     ```
-    git clone https://github.com/Nata4n/cli-passei-direto.git
+    git clone https://github.com/Nata4n/passeidireto-cli
     ```
 
 * Install dependencies
