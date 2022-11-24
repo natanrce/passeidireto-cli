@@ -1,6 +1,8 @@
-<h2 align="center">
-  Cli passei direto
-</h2>
+<p align="center">
+  <a href="https://github.com/Nata4n/passeidireto-cli" target="blank">
+    <img src="https://raw.githubusercontent.com/Nata4n/passeidireto-cli/main/assets/passei-direto-cli.png" width="120" alt="Logo" />
+  </a>
+</p>
 
 <p align="center">A progressive <a href="http://nodejs.org" target="_blank">CLI</a> (Command-line interface) to download any material from passei direto.</p>
 <p align="center">
@@ -15,6 +17,7 @@ These instructions will give you a copy of the project up and running on your lo
 ### Prerequisites
 
 * Install Python (preferably, version >= 3.6)
+* [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) binary on **PATH**
 
 ### Installation
 
