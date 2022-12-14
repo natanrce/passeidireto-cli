@@ -29,7 +29,7 @@ class PasseiDiretoService:
     soup = BeautifulSoup(html_content, features='html5lib')
     
     style_links = [
-      { 'tag': 'link', 'rel': 'stylesheet', 'href': 'src/common/styles/style.css' },
+      { 'tag': 'link', 'rel': 'stylesheet', 'href': 'src/styles/style.css' },
       { 'tag': 'link', 'rel': 'stylesheet', 'href': url },
     ]
     
