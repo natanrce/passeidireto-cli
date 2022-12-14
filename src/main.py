@@ -1,5 +1,4 @@
-from core.services.passeidireto import PasseiDiretoService
-
+from services.passeidireto import PasseiDiretoService
 
 def get_args():
   """Get arguments from command line
@@ -19,8 +18,8 @@ def get_args():
 if __name__  == '__main__':
   """Main entry point
   """
-  from core.app import App
-  from core.services.pdf import PdfService
+  from app import App
+  from services.pdf import PdfService
   
   app = App(
     get_args(),

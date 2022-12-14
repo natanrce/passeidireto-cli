@@ -10,9 +10,7 @@ class PdfService:
     result_pdf = PdfFileWriter()
     
     for buffer in pdf_buffer:
-      pdf_content = PdfFileReader(
-        stream=buffer
-      )
+      pdf_content = PdfFileReader(stream=buffer)
 
       for page in range(pdf_content.getNumPages()):
         result_pdf.addPage(pdf_content.getPage(page))
@@ -27,7 +25,7 @@ class PdfService:
       'enable-local-file-access': True
     }
 
-    with open('temp.html', 'w') as f:
+    with open('temp.html', 'w', encoding='utf-8') as f:
       f.write(html_content)
 
     pdf_file = pdfkit.from_file('temp.html', b'', options) # Obs: pdfkit.from_string not working properly with CSS
