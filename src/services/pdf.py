@@ -22,18 +22,17 @@ class PdfService:
     """
     options = {
       'encoding': 'utf-8',
-      'enable-local-file-access': True
+      'enable-local-file-access': True,
+      'page-size': 'A4',
+      'minimum-font-size': '48'
     }
 
-    with open('temp.html', 'w', encoding='utf-8') as f:
-      f.write(html_content)
-
-    pdf_file = pdfkit.from_file('temp.html', b'', options) # Obs: pdfkit.from_string not working properly with CSS
-    
-    """Remove temp file from system
-    """
-    from os import remove
-    remove('temp.html')
+    pdf_file = pdfkit.from_string(
+      html_content, 
+      False, 
+      options, 
+      css='./styles/style.css'
+    )
     
     return BytesIO(pdf_file)
   

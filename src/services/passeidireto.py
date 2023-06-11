@@ -29,12 +29,32 @@ class PasseiDiretoService:
     soup = BeautifulSoup(html_content, features='html5lib')
     
     style_links = [
-      { 'tag': 'link', 'rel': 'stylesheet', 'href': 'src/styles/style.css' },
-      { 'tag': 'link', 'rel': 'stylesheet', 'href': url },
+      { 'rel': 'stylesheet', 'href': url },
+      { 'rel': 'stylesheet', 'href': './styles/style.css' },
     ]
     
+    body_children = [
+      { 'id': 'file-viewer' },
+      { 'class': 'document-viewer' },
+      { 'class': 'document-section' },
+      { 'class': 'document-fragment' },
+      { 'class': 'page-container' },
+      { 'class': 'page-content' },
+    ]
+
     for link in style_links:
-      new_tag = soup.new_tag(link['tag'], **link)
+      new_tag = soup.new_tag('link', **link)
       soup.head.append(new_tag)
     
+    body_div = soup.body
+    content_div = soup.body.div
+
+    for child in body_children:
+      div = soup.new_tag('div', **child)
+      body_div.append(div)
+
+      body_div = div
+
+    body_div.insert(0, content_div)
+
     return str(soup)
