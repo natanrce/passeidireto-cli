@@ -54,5 +54,5 @@ Don't forget to give the project a star! Thanks again!
 
 ## Stay in touch
 
-* Author - [Natan Rodrigues](https://github.com/Nata4n)
+* Author - [Natan Rodrigues](https://github.com/natanrce)
 * Email - [eusounatan@proton.me](mailto:eusounatan@proton.me)
